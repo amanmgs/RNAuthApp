@@ -58,6 +58,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
         onChangeText={setEmail}
         keyboardType="email-address"
         autoCapitalize="none"
+        placeholder="Email"
       />
 
       <View style={styles.passwordContainer}>
@@ -67,6 +68,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
             value={password}
             onChangeText={setPassword}
             secureTextEntry={!showPassword}
+            placeholder="Password"
           />
           <TouchableOpacity
             onPress={() => setShowPassword(prev => !prev)}

@@ -44,12 +44,13 @@ const SignupScreen: React.FC<SignupScreenProps> = ({ navigation }) => {
     <View style={styles.container}>
       <Text style={styles.headerText}>Create Account</Text>
 
-      <Input label="Name" value={name} onChangeText={setName} />
+      <Input label="Name" value={name} onChangeText={setName} placeholder="Name" />
       <Input
         label="Email"
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
+        placeholder="Email"
       />
 
       <View style={styles.passwordWrapper}>
@@ -58,6 +59,7 @@ const SignupScreen: React.FC<SignupScreenProps> = ({ navigation }) => {
           value={password}
           onChangeText={setPassword}
           secureTextEntry={!showPassword}
+          placeholder="Password"
         />
         <TouchableOpacity
           onPress={() => setShowPassword((s) => !s)}

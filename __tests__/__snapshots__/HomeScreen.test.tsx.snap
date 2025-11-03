@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen matches snapshot 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 42.857142857142854,
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "fontSize": 40.85714285714286,
+        "fontWeight": "600",
+        "marginBottom": 15.694117647058823,
+        "textAlign": "center",
+      }
+    }
+  >
+    Welcome, 
+    Aman
+  </Text>
+  <Text
+    style={
+      {
+        "fontSize": 22,
+        "marginBottom": 39.23529411764706,
+        "textAlign": "center",
+      }
+    }
+  >
+    aman@example.com
+  </Text>
+  <button
+    onClick={[MockFunction]}
+    testID="button-logout"
+  >
+    Logout
+  </button>
+</View>
+`;
