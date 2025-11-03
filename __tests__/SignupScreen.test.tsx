@@ -30,7 +30,7 @@ describe('SignupScreen', () => {
 
   it('renders all input fields and signup button', () => {
     const { getByPlaceholderText, getByText } = render(
-      <SignupScreen navigation={mockNavigation} />
+      <SignupScreen navigation={mockNavigation} route={{ key: 'Signup', name: 'Signup' }}/>
     );
 
     expect(getByPlaceholderText('Name')).toBeTruthy();
@@ -41,7 +41,7 @@ describe('SignupScreen', () => {
 
   it('shows validation error if inputs are invalid', async () => {
     (validateSignup as jest.Mock).mockReturnValue('Invalid input');
-    const { getByText } = render(<SignupScreen navigation={mockNavigation} />);
+    const { getByText } = render(<SignupScreen navigation={mockNavigation} route={{ key: 'Signup', name: 'Signup' }}/>);
 
     const button = getByText('Signup');
     fireEvent.press(button);
@@ -52,7 +52,7 @@ describe('SignupScreen', () => {
   });
 
   it('shows error for invalid email format', async () => {
-    const { getByText, getByPlaceholderText, findByText } = render(<SignupScreen navigation={mockNavigation} />);
+    const { getByText, getByPlaceholderText, findByText } = render(<SignupScreen navigation={mockNavigation} route={{ key: 'Signup', name: 'Signup' }}/>);
 
     fireEvent.changeText(getByPlaceholderText('Name'), 'John');
     fireEvent.changeText(getByPlaceholderText('Email'), 'invalid-email');
@@ -66,7 +66,7 @@ describe('SignupScreen', () => {
   });
 
   it('shows error for short password', async () => {
-    const { getByText, getByPlaceholderText, findByText } = render(<SignupScreen navigation={mockNavigation} />);
+    const { getByText, getByPlaceholderText, findByText } = render(<SignupScreen navigation={mockNavigation} route={{ key: 'Signup', name: 'Signup' }}/>);
 
     fireEvent.changeText(getByPlaceholderText('Name'), 'test');
     fireEvent.changeText(getByPlaceholderText('Email'), 'test@gmail.com');
@@ -83,7 +83,7 @@ describe('SignupScreen', () => {
     (validateSignup as jest.Mock).mockReturnValue(null);
 
     const { getByPlaceholderText, getByText } = render(
-      <SignupScreen navigation={mockNavigation} />
+      <SignupScreen navigation={mockNavigation} route={{ key: 'Signup', name: 'Signup' }}/>
     );
 
     fireEvent.changeText(getByPlaceholderText('Name'), 'John');
@@ -105,7 +105,7 @@ describe('SignupScreen', () => {
     signupMock.mockResolvedValue({ ok: false, error: 'Signup failed' });
 
     const { getByPlaceholderText, getByText, findByText } = render(
-      <SignupScreen navigation={mockNavigation} />
+      <SignupScreen navigation={mockNavigation} route={{ key: 'Signup', name: 'Signup' }}/>
     );
 
     fireEvent.changeText(getByPlaceholderText('Name'), 'Jane');
@@ -118,7 +118,7 @@ describe('SignupScreen', () => {
   });
 
   it('navigates to Login screen when link is pressed', () => {
-    const { getByText } = render(<SignupScreen navigation={mockNavigation} />);
+    const { getByText } = render(<SignupScreen navigation={mockNavigation} route={{ key: 'Signup', name: 'Signup' }} />);
     fireEvent.press(getByText('Go to Login'));
     expect(mockNavigate).toHaveBeenCalledWith('Login');
   });
