@@ -22,7 +22,7 @@ Make sure you have the following installed:
 
 ### Clone the Repository
 ```bash
-https://github.com/amanmgs/RNAuthApp.git
+git clone https://github.com/amanmgs/RNAuthApp.git
 cd RNAuthApp
 ```
 
